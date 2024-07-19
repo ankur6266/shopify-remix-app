@@ -1,0 +1,33 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "0732be8e16b23c7b2725f94a58ca3758"
+name = "section-app"
+handle = "section-app-14"
+application_url = "https://championship-influences-expiration-variable.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "ankur-apps.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_files,read_orders,read_products,write_files,write_orders,write_products"
+
+[auth]
+redirect_urls = [
+  "https://championship-influences-expiration-variable.trycloudflare.com/auth/callback",
+  "https://championship-influences-expiration-variable.trycloudflare.com/auth/shopify/callback",
+  "https://championship-influences-expiration-variable.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-07"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks"
+
+[pos]
+embedded = false
